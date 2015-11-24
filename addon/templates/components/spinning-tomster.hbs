@@ -1,2 +1,9 @@
+{{#if scrollable}}
 
-<marquee behaviour="scroll" behavior="alternate" direction="right" scrollamount="10"><p class="tomster"></p></marquee>
+	<marquee behaviour="scroll" behavior="alternate" direction="right" scrollamount={{scrollamount}}>
+			<img class="tomster {{if spinnable 'spin'}} {{if pulsable 'pulse'}}" src={{tomsterImage}} />
+	</marquee>
+
+{{else}}
+		<img class="tomster {{if spinnable 'spin'}} {{if pulsable 'pulse'}}" src={{tomsterImage}} />
+{{/if}}

@@ -1,5 +1,51 @@
-.tomster {
-	background: url("/spinning-tomster/images/ember-logo.png");
-	height: 150px;
-	width: 150px;
+
+@-moz-keyframes tomster-spin {
+	from { -moz-transform: rotate(0deg); }
+	to { -moz-transform: rotate(360deg); }
 }
+
+@-webkit-keyframes tomster-spin {
+	from { -webkit-transform: rotate(0deg); }
+	to { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes tomster-spin {
+	from {transform:rotate(0deg);}
+	to {transform:rotate(360deg);}
+}
+
+.tomster.spin {
+	-webkit-animation-name: tomster-spin;
+	-webkit-animation-duration: 8000ms;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-name: tomster-spin;
+	-moz-animation-duration: 8000ms;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: linear;
+	-ms-animation-name: tomster-spin;
+	-ms-animation-duration: 8000ms;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-timing-function: linear;
+	-o-transition: rotate(3600deg);
+}
+
+.tomster.pulse {
+      -webkit-animation-name: pulsate;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-timing-function: ease-in-out;
+      -webkit-animation-iteration-count: infinite
+      }
+      @-webkit-keyframes pulsate {
+      0% {  opacity: 0.0}
+      10% { opacity: .20}
+      20% { opacity: .40 }
+      30% { opacity: .60 }
+      40% { opacity: .80 }
+      50% { opacity: 1.0}
+      60% { opacity: .80}
+      70% { opacity: .60}
+      80% { opacity: .40}
+      90% { opacity: .20}
+      100% { opacity: 0.0}
+      }
